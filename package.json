@@ -1,0 +1,11 @@
+{
+  "name": "event-management-system",
+  "version": "1.0.0",
+  "description": "Event Management System Backend",
+  "scripts": {
+    "start": "json-server --watch db.json --host 0.0.0.0 --port $PORT"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
