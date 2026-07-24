@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Dashboard</title>
+
+    <link rel="stylesheet" href="./event.css">
+</head>
+<body>
+    <script src="./dashboard.js"></script>
+<nav>
+    <h2>EventHub</h2>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="event.html">Events</a>
+        <a href="add-event.html">Add Event</a>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="stats">
+    <div class="box">
+        <h2 id="totalEvents">0</h2>
+        <p>Total Events</p>
+    </div>
+</div>
+
+<div class="stats">
+
+    <div class="card">
+        <h2 id="totalEvents">0</h2>
+        <p>Total Events</p>
+    </div>
+
+    <div class="card">
+        <h2 id="totalUsers">0</h2>
+        <p>Total Users</p>
+    </div>
+
+    <div class="card">
+        <h2 id="totalRegistrations">0</h2>
+        <p>Total Registrations</p>
+    </div>
+
+</div>
+
+</nav>
+
+<div class="container">
+   <h1>My Events</>
+        <div id="eventList">
+    </div>
+
+</div>
+</body>
+</html>

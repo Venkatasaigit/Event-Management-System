@@ -1,0 +1,33 @@
+function login() {
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    fetch("http://localhost:3000/users")
+        .then(response => response.json())
+        .then(users => {
+
+            const user = users.find(
+                u => u.email === email && u.password === password
+            );
+
+            if (user) {
+
+                localStorage.setItem("user", JSON.stringify(user));
+
+                alert("Login Successful");
+
+                window.location.href = "index.html";
+
+            } else {
+
+                alert("Invalid Email or Password");
+
+            }
+
+        })
+        .catch(error => {
+            console.error(error);
+            alert("Cannot connect to JSON Server");
+        });
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer
+        <link rel="stylesheet" href="./organizer.css">
+    </title>
+</head>
+<body>
+    <script src="./organizer.js"></script>
+    <header>
+        <h2>Event Management System</h2>
+        <button onclick="Logout()">Logout</button>
+    </header>
+    <div class="container">
+        <h1>Welcome Organizer</h1>
+        <form id="EventForm">
+            <input type="text"
+            id="title"
+            placeholder="Event title"
+            required>
+
+            <textarea
+            id="description"
+            placeholder="Description"
+            required>
+        </textarea>
+
+        <input type="date"
+            id="date"
+            required>
+
+        <input type="text"
+            id="location"
+            placeholder="Location"
+            required>
+
+        <input type="text"
+            id="image"
+            placeholder="Image URL">
+        <button type="submit">
+            Create Event
+        </button>
+        </form>
+        <hr>
+            <h2>My Events</h2>
+            <div id="EventList">
+    </div>
+</body>
+</html>

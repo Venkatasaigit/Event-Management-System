@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Sandeep",
+      "email": "sandeep@gmail.com",
+      "password": "123456",
+      "role": "organizer"
+    },
+    {
+      "id": "2",
+      "name": "Sai",
+      "email": "sai@gmail.com",
+      "password": "123456",
+      "role": "attendee"
+    },
+    {
+      "name": "Sai Sandeep",
+      "email": "sandeepsai1206@gmail.com",
+      "password": "123456",
+      "role": "organizer",
+      "id": "hr2kWEeNYtg"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "JavaScript Workshop",
+      "description": "Learn JavaScript from basics to advanced concepts.",
+      "date": "2026-07-25",
+      "time": "10:00 AM",
+      "location": "Hyderabad",
+      "category": "Workshop",
+      "capacity": 100,
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800",
+      "organizerId": 1
+    },
+    {
+      "id": "2",
+      "title": "Web Development Bootcamp",
+      "description": "HTML, CSS, JavaScript, React and Node.js.",
+      "date": "2026-07-28",
+      "time": "09:00 AM",
+      "location": "Bangalore",
+      "category": "Training",
+      "capacity": 80,
+      "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800",
+      "organizerId": 1
+    },
+    {
+      "id": "3",
+      "title": "AI & Machine Learning Seminar",
+      "description": "Introduction to Artificial Intelligence and Machine Learning.",
+      "date": "2026-08-05",
+      "time": "11:00 AM",
+      "location": "Chennai",
+      "category": "Seminar",
+      "capacity": 150,
+      "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800",
+      "organizerId": 1
+    }
+  ],
+  "rsvps": [
+    {
+      "id": "1",
+      "eventId": 1,
+      "userId": 2,
+      "status": "Attending"
+    },
+    {
+      "eventId": 1,
+      "userId": "hr2kWEeNYtg",
+      "status": "Attending",
+      "id": "fFbl9x5TBFI"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "eventId": 1,
+      "title": "Event Reminder",
+      "message": "The JavaScript Workshop starts tomorrow at 10:00 AM."
+    },
+    {
+      "id": "2",
+      "eventId": 2,
+      "title": "Venue Update",
+      "message": "The Web Development Bootcamp venue has changed to Hall B."
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

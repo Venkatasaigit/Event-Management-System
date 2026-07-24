@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <link rel="stylesheet" href="./event.css">
+</head>
+<body>
+    <script src="./event.js"></script>
+<nav>
+    <h2>EventHub</h2>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="my-events.html">My Events</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button onclick="logout()">Logout</button>
+    </div>
+</nav>
+
+<section class="container">
+
+    <h1>Upcoming Events</h1>
+
+    <input type="text" id="search" placeholder="Search Events">
+
+<select id="filter">
+    <option value="">All Categories</option>
+    <option value="Workshop">Workshop</option>
+    <option value="Seminar">Seminar</option>
+    <option value="Training">Training</option>
+</select>
+    <input
+        type="text"
+        id="search"
+        placeholder="Search Event"
+        onkeyup="searchEvent()">
+        <button onclick="viewEvent(${event.id})">View Details</button>
+    <div id="eventList"></div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+
+    <link rel="stylesheet" href="./event.css">
+</head>
+<body>
+    <script src="./add-event.js"></script>
+<nav>
+    <h2>EventHub</h2>
+
+    <a href="dashboard.html">Dashboard</a>
+</nav>
+
+<div class="container">
+
+<h1>Add New Event</h1>
+
+<input type="text" id="title" placeholder="Event Title">
+
+<textarea id="description" placeholder="Description"></textarea>
+
+<input type="date" id="date">
+
+<input type="time" id="time">
+
+<input type="text" id="location" placeholder="Location">
+
+<input type="text" id="category" placeholder="Category">
+
+<input type="number" id="capacity" placeholder="Capacity">
+
+<input type="text" id="image" placeholder="Image URL">
+
+<button onclick="addEvent()">Add Event</button>
+</div>
+</body>
+</html>
