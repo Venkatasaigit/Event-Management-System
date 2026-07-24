@@ -40,6 +40,10 @@ function displayEvents(events){
                 Register
             </button>
 
+            <button onclick="viewEvent(${event.id})">
+                View Details
+            </button>
+
         </div>
 
         `;
@@ -64,7 +68,6 @@ function searchEvent(){
     displayEvents(filter);
 
 }
-
 function registerEvent(eventId){
 
     const user=JSON.parse(localStorage.getItem("user"));
@@ -78,15 +81,13 @@ function registerEvent(eventId){
         return;
 
     }
-    function viewEvent(id){
-    window.location.href=`event-details.html?id=${id}`;
-}
 
     fetch(`http://localhost:3000/rsvps?eventId=${eventId}&userId=${user.id}`)
 
     .then(res=>res.json())
 
     .then(data=>{
+
 
         if(data.length>0){
 
@@ -103,7 +104,6 @@ function registerEvent(eventId){
             headers:{
                 "Content-Type":"application/json"
             },
-
             body:JSON.stringify({
 
                 eventId:eventId,
@@ -113,17 +113,17 @@ function registerEvent(eventId){
                 status:"Attending"
 
             })
-
         })
 
         .then(()=>{
 
             alert("Registration Successful");
-
         });
-
     });
+}
+function viewEvent(id){
 
+    window.location.href=`event-details.html?id=${id}`;
 }
 function logout(){
 
