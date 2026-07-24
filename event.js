@@ -13,7 +13,7 @@ fetch("http://localhost:3000/events")
 function displayEvents(events){
 
     const eventList = document.getElementById("eventList");
-
+    const API = "https://event-management-system-2-ha7n.onrender.com";
     eventList.innerHTML = "";
 
     events.forEach(event=>{

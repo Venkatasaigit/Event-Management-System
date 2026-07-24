@@ -2,7 +2,7 @@ function login() {
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
-
+    const API = "https://event-management-system-2-ha7n.onrender.com";
     fetch("http://localhost:3000/users")
         .then(response => response.json())
         .then(users => {
