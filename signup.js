@@ -1,5 +1,6 @@
-function signup() {
+const API = "https://event-management-system-2-ha7n.onrender.com";
 
+function signup() {
     const password = document.getElementById("Password").value;
     const confirmPassword = document.getElementById("ConfirmPassword").value;
 
@@ -15,29 +16,19 @@ function signup() {
         role: document.getElementById("role").value
     };
 
-    fetch("http://localhost:3000/users", {
-
+    fetch(`${API}/users`, {
         method: "POST",
-
         headers: {
             "Content-Type": "application/json"
         },
-
         body: JSON.stringify(user)
-
     })
     .then(res => res.json())
     .then(() => {
-
         alert("Account Created Successfully");
-
         window.location.href = "login.html";
-
     })
     .catch(err => {
-
         alert(err.message);
-
     });
-
 }
