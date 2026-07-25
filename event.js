@@ -1,19 +1,26 @@
+const API = "https://event-management-system-2-ha7n.onrender.com";
+
 let allEvents = [];
 
-fetch("http://localhost:3000/events")
-.then(res => res.json())
-.then(data => {
-
+fetch(`${API}/events`)
+  .then(res => {
+    if (!res.ok) {
+      throw new Error("Failed to fetch events");
+    }
+    return res.json();
+  })
+  .then(data => {
     allEvents = data;
-
     displayEvents(data);
-
-});
+  })
+  .catch(error => {
+    console.error(error);
+    alert("Cannot connect to JSON server");
+  });
 
 function displayEvents(events){
 
     const eventList = document.getElementById("eventList");
-    const API = "https://event-management-system-2-ha7n.onrender.com";
     eventList.innerHTML = "";
 
     events.forEach(event=>{
