@@ -1,3 +1,5 @@
+const API = "https://event-management-system-2-ha7n.onrender.com";
+
 const user = JSON.parse(localStorage.getItem("user"));
 
 if (!user) {
@@ -6,8 +8,8 @@ if (!user) {
 }
 
 Promise.all([
-    fetch("http://localhost:3000/events").then(res => res.json()),
-    fetch(`http://localhost:3000/rsvps?userId=${user.id}`).then(res => res.json())
+    fetch(`${API}/events`).then(res => res.json()),
+    fetch(`${API}/rsvps?userId=${user.id}`).then(res => res.json())
 ])
 .then(([events, rsvps]) => {
 
@@ -18,19 +20,17 @@ Promise.all([
     );
 
     displayMyEvents(myEvents, rsvps);
-
 });
 
 function displayMyEvents(events, rsvps) {
-  const container = document.getElementById("myEvents");
+    const container = document.getElementById("myEvents");
     container.innerHTML = "";
-        if(events.length===0){
-        container.innerHTML="<h2>No Events Registered</h2>";
+
+    if (events.length === 0) {
+        container.innerHTML = "<h2>No Events Registered</h2>";
         return;
     }
-
     events.forEach(event => {
-
         const rsvp = rsvps.find(r => r.eventId === event.id);
 
         container.innerHTML += `
@@ -47,18 +47,18 @@ function displayMyEvents(events, rsvps) {
         `;
     });
 }
-function cancelRegistration(id){
-    if(confirm("Cancel this registration?")){
-        fetch(`http://localhost:3000/rsvps/${id}`,{
-            method:"DELETE"
+function cancelRegistration(id) {
+    if (confirm("Cancel this registration?")) {
+        fetch(`${API}/rsvps/${id}`, {
+            method: "DELETE"
         })
-        .then(()=>{
+        .then(() => {
             alert("Registration Cancelled");
             location.reload();
         });
     }
 }
-function logout(){
+function logout() {
     localStorage.removeItem("user");
-    window.location.href="login.html";
+    window.location.href = "login.html";
 }
